@@ -11,6 +11,9 @@ const tests: [
     | { error: true; too_many: ObtainablePieces[] }
   )
 ][] = [
+  [["赤王", "赤王", "赤王", "赤王"], { error: true, too_many: ["赤王"] }],
+  [["赤王", "赤王"], { error: true, too_many: ["赤王"] }],
+  [["黒車", "黒車", "黒車", "赤巫", "赤巫", "赤巫", "赤船"], { error: true, too_many: ["黒車", "赤巫"] }],
   [["赤弓"], { error: false, score: 0, hands: [] }],
   [["赤兵"], { error: false, score: 0, hands: [] }],
   [["赤車"], { error: false, score: 0, hands: [] }],
